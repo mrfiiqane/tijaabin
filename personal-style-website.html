@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <title>personal-style-website </title>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: aliceblue;
+                color: #333;
+                overflow-x: hidden;
+            }
+            .hero{
+                background: url("https://images.pexels.com/photos/31980294/pexels-photo-31980294/free-photo-of-man-in-buenos-aires-enjoying-music-with-headphones.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                height: 60vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                
+
+            }
+            
+            .hero h1{
+                font-size: 3rem;
+                font-family: 'Times New Roman', Times, serif;
+                color: #0c49f1;
+                margin: 30px 0;
+                padding: 30px;
+            }
+            .hero p{
+                font-size: 1.2rem;
+            }
+            .navbar{
+                background-color: #333;
+                padding: 10px 0;
+            }
+            .navbar ul{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                
+            }
+            .navbar ul li{
+                margin: 0 20px;
+            }
+            .navbar ul li a{
+                color: white;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+            .navbar ul li a:hover{
+                text-decoration: underline;
+            }
+            .main-content{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .gallary{
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+            .gallary h2{
+                text-align: center;
+                margin-bottom: 20px;
+
+            }
+            .gallary .gallary-grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(170px, 1fr));
+                gap: 20px;
+                justify-content: center;
+                
+            }
+            .gallary .gallary-grid .gallary-item{
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in;
+                box-shadow: 0px 4px 0px rgba(0,0,0,0.2);
+                
+                
+
+            }
+            .gallary .gallary-grid .gallary-item:hover{
+                transform: scale(1.15);
+                cursor: pointer;
+            }
+            .gallary .gallary-grid .gallary-item img{
+                width: 100%;
+                height: 100%;
+
+            }
+            .gallary .gallary-grid .gallary-item .overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(100, 155, 255, 0.432);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 0.5s step-end;
+                opacity: 0;
+           
+            }
+            .gallary .gallary-grid .gallary-item:hover .overlay{
+                opacity: 1;
+            }
+
+
+            .journey{
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+            .journey h2{
+                text-align: center;
+                margin-bottom: 20px;
+
+            }
+            
+            .journey .journey-grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(170px, 1fr));
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .journey .journey-grid .journey-item{
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in;
+                box-shadow: 0px 3px 0px rgba(0,0,0,0.2);
+
+            }
+            .journey .journey-grid .journey-item:hover{
+                transform: scale(1.15);
+                cursor: pointer;
+
+            }
+            .journey .journey-grid .journey-item img{
+                width: 100%;
+                height: 100%;
+
+            }
+            .journey .journey-grid .journey-item .overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(209, 196, 14, 0.432);
+                color: rgb(68, 2, 2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 0.5s step-end;
+                opacity: 0;
+
+            }
+            .journey .journey-grid .journey-item:hover .overlay{
+                opacity: 1;
+            }
+
+
+            .blog-section{
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+            .blog-section h2{
+                text-align: center;
+                margin-bottom: 20px;
+
+            }
+            .blog-section .blog-container{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(170px, 1fr));
+                gap: 20px;
+                justify-content: center;
+            }
+            .blog-section .blog-container h2{
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+             
+
+            }
+
+
+
+            #blog{
+                padding: 5px 20px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            #blog h2{
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 0;
+                margin: 10px auto;
+                background: -moz-linear-gradient(#0c49f1, #333);
+                transition: transform 0.3s ease;
+            }
+            #blog h2:hover{
+                background-color: cadetblue;
+                
+                font-size: 1.7rem;
+                text-align: center;
+                padding: 0;
+                margin: 0 auto;
+                text-shadow: #0c49f1;
+                font-style: italic;
+                cursor: pointer;
+                animation: transform 0.2s ease;
+            }
+            .blog-container{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150, 1fr));
+                gap: 15px;
+                justify-content: center;
+            }
+            .blog-container article{
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+            }
+            .blog-container article img{
+                width: 100%;
+                height: 85%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            .blog-container article img:hover{
+                background-color: #0c49f1;
+                transform: scale(1.2);
+                transition: transform 0.1s ease;
+            }
+
+
+            footer{
+                background-color: #0c49f1;
+                color: white;
+                text-align: center;
+                padding: 50px;
+            }
+
+
+
+            
+
+
+
+        </style>
+
+    </head>
+    <body>
+
+        <header class="hero">
+            <div class="content">
+                <h1>welcome to my style</h1>
+                <P>Consectetur nostrud amet nulla sint est adipisicing commodo occaecat cupidatat ipsum.
+                     Ex Lorem sint duis veniam proident cupidatat ea velit irure elit. Ex adipisicing sint mollit 
+                     non dolore enim aliquip commodo consequat ex consectetur laboris laboris. Elit veniam sint 
+                     sunt id proident cupidatat mollit aliquip deserunt ex amet eu.</P>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <ul>
+                <li> <a href="#gallary">Gallary</a></li>
+                <li> <a href="#journey">Journey</a></li>
+                <li> <a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+
+
+        <main class="main-content">
+
+            <section id="gallary" class="gallary">
+                <h2>gallary</h2>
+                <div class="gallary-grid">
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/31910663/pexels-photo-31910663/free-photo-of-person-fishing-at-tranquil-lake-under-clear-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">my new style</div>
+                    </div>
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/20967/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">my new style</div>
+                    </div>
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in mogadisho</div>
+                    </div>
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in bosaaso</div>
+                    </div>
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in mogadisho</div>
+                    </div>
+                    <div class="gallary-item">
+                        <img src="https://images.pexels.com/photos/209151/pexels-photo-209151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in bosaaso</div>
+                    </div>
+                </div>
+            </section>
+            <section id="journey" class="journey">
+                <h2>my journey</h2>
+                <div class="journey-grid">
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/22668200/pexels-photo-22668200/free-photo-of-man-in-green-beanie-sitting-on-rock-on-lakeshore-and-looking-at-view.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">my new style</div>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/5345395/pexels-photo-5345395.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">my new style</div>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/2736957/pexels-photo-2736957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in mogadisho</div>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/31884207/pexels-photo-31884207/free-photo-of-green-sea-turtle-glides-under-sunlit-ocean-waters.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in bosaaso</div>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/29211872/pexels-photo-29211872/free-photo-of-traditional-vietnamese-boat-ride-in-m-tho-rain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in mogadisho</div>
+                    </div>
+                    <div class="journey-item">
+                        <img src="https://images.pexels.com/photos/27600467/pexels-photo-27600467/free-photo-of-bustling-evening-traffic-in-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <div class="overlay">in bosaaso</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="blog" class="blog-section">
+                <h2>Blog</h2>
+                <div class="blog-container">
+                    <article>
+                        <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <h2>my food style</h2>
+                    </article>
+                    <article>
+                        <img src="https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <h2>my style tips</h2>
+                    </article>
+                    <article>
+                        <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                        <h2>my car </h2>
+                    </article>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2025 my personal-style. all rights are reversed.
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>parallexs website </title>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+
+            }
+            body,html{
+                height: 100%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                background-color: rgb(33, 36, 40);
+                color: white;
+            }
+            h2,h3{
+                color: #cc00ff;
+            }
+            p{
+                color: #000000;
+            }
+            h1{
+                color: #5500c5;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            .button{
+                background-color: d14823;
+                padding: 15px 30px;
+                font-size: 16px;
+                border-radius: 5px;
+                display: inline-block;
+                margin-top: 20px;
+
+            }
+            .paralax-section{
+                position: relative;
+                height: 100vh;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .hero{
+                background-image: linear-gradient(rgba(33,36,40,0.7),
+                 rgba(73, 249, 255, 0.7)), url("https://images.pexels.com/photos/2387325/pexels-photo-2387325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            }
+            #parallaxs-2{
+                background-image: linear-gradient(rgba(255, 255, 255, 0.945),
+                rgba(110, 146, 69, 0.719)), url("https://images.pexels.com/photos/14475371/pexels-photo-14475371.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+
+            }
+            .content-section{
+                padding: 60px 20px;
+                background-color: #f4f4f4;
+
+            }
+            .content-section .content{
+                max-width: 1200px;
+                margin: 0, auto;
+                text-align: center;
+
+            }
+            .features{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .features .feature{
+                padding: 20px;
+                background-color: white;
+                color: #d14823;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgb(33, 36, 40, 0.2);
+            }
+            @media screen and (max-width: 768px){
+                .features{
+                    grid-template-columns: 1fr
+
+                } 
+                .feature{
+                    font-size: 1.2rem;
+                    color: blueviolet;
+                }
+                body{
+                    background-color: blue;
+                }
+                .hero{
+                    background-color: rgb(143, 251, 255);
+                    color: black;
+                }
+            }
+            .content-section .content p{
+                margin: 20px;
+
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <section class="paralax-section  hero">
+            <div class="hero-contant">
+                <h1>welcome to hero world</h1>
+                <p> your getway future hero you can join it</p>
+                <a href="#feature" class="button"> discover more</a>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="content">
+                <h2> Our features</h2>
+                <p>Voluptate fugiat eiusmod magna nisi commodo sit exercitation anim dolor adipisicing pariatur
+                     ea occaecat. Aliquippariatur nostrud commodo est.</p>
+                      
+                <div class="features">
+                    <div class="feature">
+                        <h3>innovation</h3>
+                        <p> elit et culpa quis aliqua dolore nostrud. Commodo pariatur cillum
+                            aliquip culpa magna ipsum do nonit et culpa quis aliqua dolore  officia </p>
+                    </div>
+                    <div class="feature">
+                        <h3>innovation</h3>
+                        <p> elit et culpa quis aliqua dolore nostrud. Commodo pariatur cillum
+                            aliquip culpa magna ipsum do nonit et culpa quis aliqua dolore  officia </p>
+                    </div>
+                    <div class="feature">
+                        <h3>innovation</h3>
+                        <p> elit et culpa quis aliqua dolore nostrud. Commodo pariatur cillum
+                            aliquip culpa magna ipsum do nonit et culpa quis aliqua dolore  officia </p>
+                    </div>
+                </div>      
+            </div>
+        </section>
+        <section class="paralax-section" id="parallaxs-2">
+            <div class="content">
+                <h2>Our mission</h2>
+                <p>fugiat. Aute quis sunt proident laborum eiusmod consectetur in voluptate. Occaecat eu dolore ex do do.</p>
+            </div>
+            
+        </section>
+        <section class="content-section" >
+            <div class="content">
+                <h2>Our joint</h2>
+                <p>fugiat. Aute quis sunt proident laborum eiusmod consectetur in voluptate. Occaecat eu dolore ex do do.</p>
+            </div>
+            <a href="" class="cta-button"> Get started</a>
+
+        </section>
+    </body>
+</html>
