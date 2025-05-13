@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>personal-portifolio </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            body{
+                line-height: 1.6;
+                color: #333;
+                background: linear-gradient(110deg, #7aee9c, #4285f4);
+                background: radial-gradient(80deg, #395a43, #00d9ff);
+
+            }
+            header{
+                background: linear-gradient(90deg, #030e62, #4285f4);
+                color: white;
+                text-align: center;
+                padding: 1rem;
+            }
+            header h1{
+                font-size: 3rem;
+
+            }
+            header p{
+                font-size: 1.2rem;
+            }
+
+            header .menu{
+                list-style: none;
+                color: #00d9ff;
+                text-align: center;
+                margin: 25px 10px 10px;
+                padding: 2%;
+                transition: background: 0.5, box-shadow: 0.4;
+                
+            }
+            .menu:hover{
+                background: linear-gradient(90deg, #030e62, #4285f4);
+                box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+                padding: 60px;
+
+            }
+            .menu li{
+                display: inline;
+                margin: 0 10px;
+               
+            }
+
+            .menu li a{
+                color: #00d9ff;
+                font-weight: bold;
+                text-decoration: none;
+                padding: 10px 10px 0;
+                border: 2 solid transparent;  
+                transition: transform: 0.5s;
+                 
+
+            }
+            .menu li a:hover{
+                background-color: #0062ff;
+                background-color: #5663d4;
+                color: white;
+                border-color: rgb(140, 221, 74);
+                border-radius: 4px;
+
+            }
+
+            .container{
+                max-width: 1200px;
+                margin: 2rem auto;
+            }
+            .about,.project,.contact{
+                margin-bottom: 2rem;
+
+            }
+            .about-me{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                text-align: center;
+            }
+            .about-me img{
+                transition: transform 0.5s;
+            }
+            .about-me img:hover{
+                background-color: #0062ff;
+                transform: scale(1.1);
+            }
+            .main-content{
+                max-width: 600px;
+
+            }
+            .about h2, .projects h2, .contact h2{
+                text-align: center;
+                font-size: 1.3rem;
+                margin: 0.5rem;
+                color: blue;
+                margin-top: 5rem;
+            }
+
+            .about p{
+                text-align: center;
+                font-size: 1.2rem;
+                line-height: 1.9;
+                margin: 0 auto;
+            }
+            .about-image{
+                border-radius: 15%;
+                width: 300px;
+                height: 400px;
+                object-fit: cover;
+
+            }
+            .projects .project{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                height: auto;
+                width: auto;
+                gap: 1.3rem;
+            }
+            .projects .project .project-card{
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 1cap 6px rgba(0, 0, 0, 0.1);
+                max-width: 300px; /* optional maximum */
+                max-height: 900px;
+                width: 380px;
+                height: 380px;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                
+            }
+            .projects .project .project-card p{
+                text-align: center;
+                font-size: auto;
+            }
+            .projects .project .project-card img{
+                width: 82%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            .project .project-card{
+                transition: background-color: 0.5s, transform: 0.4s, textshadow: 0.3s;
+            }
+            .project .project-card:hover{
+                background-color: #d3d6ee;
+                transform: scale(1.09);
+                text-shadow: 2px 2px 4px salmon;
+            }
+
+            .contact input, .contact textarea{
+                width: 100%;
+                max-width: 600px;
+                padding: 0.9rem;
+                border-radius: 5px;
+                font-size: 1rem;
+                margin: 3px auto;
+                border-color: #4285f4;
+
+            }
+
+            .contact p{
+                text-align: center;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+            }
+            .contact button{
+                width: 30%;
+                padding: 8px;
+                margin: 5px auto;
+                cursor: pointer;
+
+            }
+
+            .contact .social-icons h3{
+                text-align: start;
+                margin: 40px 0;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            .contact .social-icons{
+                display: flex;
+                gap: 30px;
+                max-width: 500px;
+                max-height: 400px;
+                margin: 40px auto;
+                padding: 10px;
+   
+  
+  
+            }
+
+            .contact .social-icons i{
+                display: inline;
+                width: 100%;
+                height: 100%;
+                padding: 5px;
+                border-radius: 40%;
+                background-color: #fff;
+                box-shadow: 20px 10px 5px rgba(0,0,0,0.2);
+                margin: 10px auto;
+                line-height: 80px;
+                text-decoration: none;
+                text-align: center;
+                font-size: 30px;
+                color: #8E7DBE;
+                cursor: pointer;
+            }
+            .contact .social-icons:hover i{
+                background-color: #f3f3f3;
+                color: hsl(261, 96%, 71%);
+                align-items: center;
+                justify-content: center;
+            }
+    
+
+            footer{
+                background: linear-gradient(280deg, #03093b, #0062ff);
+                color: #fff;
+                text-align: center;
+                padding: 5rem;
+                margin: 0 auto;
+                
+            }
+            @media screen and (max-width: 768px){
+                header{
+                background: linear-gradient(90deg, #abafcf, #2d2e244b);
+                color: rgb(14, 247, 65);
+                text-align: center;
+                padding: 0.5rem;
+                align-items: center;
+                justify-content: center;
+                }
+                header h1{
+                    font-size: 0.7rem;
+                }
+                header p{
+                    font-size: 0.5rem;
+                }
+
+                header .menu{
+                    list-style: none;
+                    color: #00d9ff;
+                    text-align: center;
+                    margin: 10px auto;
+                    padding: 5%;
+                    transition: background-color: 0.5s;
+                }
+                .menu:hover{
+                    background-color: #0062ff;
+                }
+
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        
+
+
+        <header>
+            <h1>Mohamed's portifolio</h1>
+                <p><br>Welcome to my personal-portifolio i am pleased to meet you.</p>
+
+            <nav> 
+                <ul class="menu">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#contact">contact</a></li>
+
+                    <li><a href="/projects/begginer/sing in.html"  target="_blank">click it to sing in </a></li>
+
+                    <li><a href="/projects/begginer/sing up.html"  target="_blank"> go to sing up </a></li>
+                        
+                </ul>
+        </nav>     
+        </header>
+
+        <div class="container">
+
+
+            <section id="about" class="about">
+                <h2> about me</h2>
+                <div class="about-me">
+                    <img src="https://images.pexels.com/photos/6379539/pexels-photo-6379539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="about-image" alt="image">
+                    <div class="main-content">
+                        <p><br>My name is Mohamed Mohamud, i am a skilled some skilles,<br> 
+                            i am student My level of education i have  2 diploma computer,school and 3 more certificates,
+                            i love programming as a game 4fun, i know concepts html,css,pyhon.etc.. i build it small projects you can see below thanks.</p> 
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>my Html & Css projects</h2>
+                <div class="project">
+                    <div class="project-card">
+                        <img src="/projects/begginer/images/Screenshot 2025-05-05 113700.png" >
+                        <h3>Online store</h3>
+                        <p>simple product showcase for an online store.
+                            It displays multiple items with images, names, and prices, 
+                            simulating an e-commerce platform for browsing products.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <img src="/projects/begginer/images/Screenshot 2025-05-05 113813.png" >
+                        <h3>ToDoList</h3>
+                        <p>ToDoList application, designed to help users organize their daily tasks, 
+                            Users can easily add, manage,remove tasks,it a helpful productivity tool.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="/projects/begginer/images/Screenshot 2025-05-05 113926.png" >
+                        <h3>Long in form</h3>
+                        <p>This is a log in form it used to manage users It likely allows users information.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <img src="/projects/begginer/images/Screenshot 2025-05-05 105559.png" >
+                        <h3>photography website</h3>
+                        <p>This website a visual gallery that displays beautiful photos,
+                            users to view multiple images for showcasing photography or art.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <img src="/projects/begginer/images/Screenshot 2025-05-05 115929.png" >
+                        <h3>Profile card</h3>
+                        <p> is shown with key statistics like project,followers,likes, introduces summarizes professional profile.
+
+                    </p>
+                    </div>
+                </div>
+            </section>
+
+            <div id="contact" class="contact">
+                <h2>contact me</h2>
+                <p>Proident ir. id tempr commodo. Nisi voluptate in anim irure irure in.</p>
+                <form>
+                    <input type="text" placeholder="name">
+                    <input type="email" placeholder="email">
+                    <textarea rows="5" placeholder="your massage"> </textarea>
+                    <button type="submit">send massage </button>
+                </form>
+                
+                <div class="social-icons">
+                    <h3>OR Direct Contacts click here </h3>
+                    <a href="https://facebook.com/YourPageName" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="https://twitter.com/YourUsername" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                      </a>  
+                    <a href="https://wa.me/252906816341" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                      
+                </div>
+            </div>
+
+            
+
+        </div>
+
+        <footer>
+            &copy; 2025 my portfolio. all rights reserved
+        </footer>
+        
+
+    </body>
+</html>
